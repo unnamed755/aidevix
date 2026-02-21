@@ -1,165 +1,142 @@
-# AIDEVIX - Onlayn Ta'lim Platformasi
+# AIDEVIX - Professional Dasturlash Kurslari Platformasi
 
-Professional dasturlash kurslari va video darslar platformasi.
+![AIDEVIX](https://img.shields.io/badge/AIDEVIX-Platform-blue)
+![React](https://img.shields.io/badge/React-19.2.0-61dafb)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4.1-38bdf8)
+
+Professional dasturlash kurslari va video darslar platformasi. React, Next.js, TypeScript va boshqa zamonaviy texnologiyalarni o'rganing.
 
 ## 🚀 Xususiyatlar
 
-### ✅ Foydalanuvchi funksiyalari
-- Ro'yxatdan o'tish / Kirish (JWT Authentication)
-- **MAJBURIY:** Instagram, Telegram, YouTube ga obuna tekshiruvi
-- 3 ta tarif: FREE, PLUS, PRO
-- YouTube videolarni ko'rish
-- Video saqlash (Favorites)
-- Ko'rilgan videolar tarixi
-- Progress tracking
-- Like bosish
-- Profil boshqarish
-
-### 🎓 Kurslar
-- React.js
-- Next.js
-- TypeScript
-- HTML/CSS
-- Tailwind CSS
-- React Native
-
-### 💎 Tariflar
-- **FREE:** Faqat bepul videolar
-- **PLUS:** 49,000 so'm/oy - Ortacha videolar + FREE
-- **PRO:** 99,000 so'm/oy - Barcha videolar + Sertifikat + Mentor
-
-### 👨‍💼 Admin Panel
-- Kurs qo'shish/tahrirlash/o'chirish
-- Video yuklash (YouTube)
-- Reels qo'shish
-- Foydalanuvchilarni boshqarish
-- Statistika
+- ✅ 3 ta tarif: FREE, PLUS, PRO
+- ✅ 50+ video kurslar
+- ✅ 500+ video darslar
+- ✅ Real-time progress tracking
+- ✅ Ko'rilgan videolar tarixi
+- ✅ Favorites system
+- ✅ YouTube video integratsiya
+- ✅ Instagram/Telegram/YouTube obuna
+- ✅ To'lov tizimi (UzCard, Humo, Visa)
+- ✅ Admin panel
+- ✅ Responsive design (Mobile, Tablet, Desktop)
 
 ## 🛠 Texnologiyalar
 
 ### Frontend
-- React.js 19
-- Tailwind CSS
+- React 19.2.0
+- Tailwind CSS 3.4.1
 - Redux Toolkit
-- React Router
+- React Router DOM
 - Axios
 - React Icons
 
-### Backend
+### Backend (Kelgusida)
 - Node.js
 - Express.js
 - MongoDB
 - JWT Authentication
-- bcryptjs
 
 ## 📦 O'rnatish
 
-### 1. Frontend
 ```bash
+# Dependencies o'rnatish
 npm install
-cp .env.example .env
+
+# Development server
 npm run dev
+
+# Production build
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-### 2. Backend
+## 🌐 Deploy
+
+### GitHub Pages
+
+1. Repository yarating
+2. Settings > Pages > Source: "GitHub Actions"
+3. Push qiling:
+
 ```bash
-cd backend
-npm install
-cp .env.example .env
-# .env faylini to'ldiring
-npm run dev
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+git push -u origin main
 ```
 
-### 3. MongoDB
-MongoDB o'rnatilgan va ishlab turishi kerak:
+4. GitHub Actions avtomatik deploy qiladi
+5. https://USERNAME.github.io/REPOSITORY/ da ko'ring
+
+### Vercel
+
 ```bash
-# MongoDB connection string
-MONGODB_URI=mongodb://localhost:27017/aidevix
+npm install -g vercel
+vercel
 ```
 
-## 🔐 Environment Variables
+### Netlify
 
-### Frontend (.env)
-```
-VITE_API_URL=http://localhost:5000/api
-```
-
-### Backend (.env)
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/aidevix
-JWT_SECRET=your_secret_key
-JWT_REFRESH_SECRET=your_refresh_secret
-
-INSTAGRAM_URL=https://www.instagram.com/aidevix
-TELEGRAM_URL=https://t.me/aidevix
-YOUTUBE_URL=https://youtube.com/@aidevix
+```bash
+npm run build
+# dist papkasini Netlify ga yuklang
 ```
 
-## 📱 Ijtimoiy tarmoqlar
+## 📱 Responsive
 
-Ro'yxatdan o'tish uchun MAJBURIY:
-- Instagram: [@aidevix](https://www.instagram.com/aidevix)
-- Telegram: [@aidevix](https://t.me/aidevix)
-- YouTube: [@aidevix](https://youtube.com/@aidevix)
+- 📱 Mobile: 320px - 768px
+- 📱 Tablet: 768px - 1024px
+- 💻 Desktop: 1024px+
 
-## 🎯 Loyiha strukturasi
+## 🎨 Dizayn
 
-```
-AIDEVIX/
-├── src/
-│   ├── components/     # Navbar, Footer
-│   ├── pages/          # Home, Courses, VideoPlayer, etc.
-│   ├── store/          # Redux slices
-│   └── utils/          # API calls
-├── backend/
-│   ├── models/         # User, Course, Video, Reels
-│   ├── routes/         # API routes
-│   ├── middleware/     # Auth, role check
-│   └── config/         # Database config
-```
+- Dark theme
+- Gradient colors
+- Smooth animations
+- Premium UI/UX
+- Tailwind CSS utilities
 
-## 🔥 Asosiy funksiyalar
+## 📊 Funksiyalar
 
-1. **Ijtimoiy tarmoq tekshiruvi** - Ro'yxatdan o'tish uchun majburiy
-2. **3 darajali tarif tizimi** - FREE, PLUS, PRO
-3. **YouTube video integratsiya** - Embedded player
-4. **Progress tracking** - Video ko'rish jarayonini saqlash
-5. **Favorites** - Sevimli videolarni saqlash
-6. **Admin panel** - To'liq boshqaruv paneli
-
-## 📝 API Endpoints
-
-### Auth
-- POST `/api/auth/register` - Ro'yxatdan o'tish
-- POST `/api/auth/login` - Kirish
-
-### Courses
-- GET `/api/courses` - Barcha kurslar
-- GET `/api/courses/:id` - Bitta kurs
-- GET `/api/courses/video/:id` - Video (auth + social check)
-
-### User
-- GET `/api/user/profile` - Profil
-- POST `/api/user/favorites/:videoId` - Saqlash
-- POST `/api/user/progress/:videoId` - Progress
-
-### Subscription
-- POST `/api/subscription/subscribe` - Obuna
-- GET `/api/subscription/status` - Status
+### Foydalanuvchi
+- Ro'yxatdan o'tish / Kirish
+- Profil boshqarish
+- Video ko'rish
+- Progress tracking
+- Favorites
+- Watch history
 
 ### Admin
-- POST `/api/admin/courses` - Kurs yaratish
-- POST `/api/admin/videos` - Video yaratish
-- GET `/api/admin/stats` - Statistika
+- Kurs boshqarish
+- Video yuklash
+- Statistika
+- Foydalanuvchilar
 
-## 🚀 Ishga tushirish
+## 🔐 Xavfsizlik
 
-1. MongoDB ishga tushiring
-2. Backend: `cd backend && npm run dev`
-3. Frontend: `npm run dev`
-4. Browser: `http://localhost:5173`
+- JWT Authentication
+- Password hashing
+- SSL encryption
+- Role-based access
 
 ## 📄 Litsenziya
 
 © 2026 AIDEVIX. Barcha huquqlar himoyalangan.
+
+## 👨‍💻 Muallif
+
+AIDEVIX Team
+
+## 📞 Aloqa
+
+- Instagram: [@aidevix](https://instagram.com/aidevix)
+- Telegram: [@aidevix](https://t.me/aidevix)
+- YouTube: [@aidevix](https://youtube.com/@aidevix)
+
+## 🙏 Minnatdorchilik
+
+React, Tailwind CSS va boshqa open-source kutubxonalar uchun rahmat!
